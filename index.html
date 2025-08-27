@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" 
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal blog</title>
+    <link rel="stylesheet" href="blog.css">
+   
+</head>
+<body>
+    <!-- Scrolling Indicator -->
+   <div class="scrollingindicator"></div>
+
+   <!-- Header -->
+   <header class="header">
+<nav class="container">
+            <a href="#" class="logo">TasteCode Travels</a>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+  <div class="search-box">
+    <button id="searchbtn" onclick="toggleSearch()">
+     <i class="fa-solid fa-magnifying-glass"></i>
+        <span>Search Articles...</span>
+    </button>
+     <select id="categorySelect">
+      <option value="food">Food</option>
+      <option value="tech">Tech</option>
+      <option value="travel">Travel</option>
+    </select>
+  </div>
+        </nav>
+    </header> 
+
+    <!-- Hero -->
+    <section class="hero">
+    <div class="container">
+<h1> Welcome to TasteCode Travels</h1>
+<p>Discover stories of innovation, cuisine, and adventure</p>
+     <a href="#featured" class="herobtn">Explore Articles</a>
+        </div>
+    </section>
+
+  <!-- Content -->
+  <!-- Explore Cetgories -->
+ <main>
+        <div class="container">
+            <section class="categories" id="categories">
+                <h2>Explore Categories</h2>
+                <div class="category-grid">
+                    <div class="category-card" onclick="filterPosts('food')">
+                        <h3>Food</h3>
+                        <p>Bold flavors, easy recipes</p>
+                    </div>
+                    <div class="category-card" onclick="filterPosts('travel')">
+                        <h3>Travel</h3>
+                        <p>Go far, feel more.</p>
+                    </div>
+                    <div class="category-card" onclick="filterPosts('tech')">
+                        <h3>Tech</h3>
+                        <p>UI/UX and visual design</p>
+                    </div>
+                </div>
+            </section>
+
+         <!-- Featured Articles -->
+              <section class="featured-posts" id="featured">
+                <h2>Featured Articles</h2>
+                <div class="posts-grid" id="postsGrid">
+                    <div class="post-card" data-category="food" onclick="openPost('ai-future')">
+                        <div class="post-image" id="food1">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-category">Food</span>
+                                <span class="post-date">Dec 15, 2024</span>
+                            </div>
+                            <h3 class="post-title">Fresh Fig & Chickpea Harmony</h3>
+                            <p class="post-excerpt">Earthy chickpeas meet sweet figs and crisp veggies in a bowl thats as nourishing as it is beautiful.</p>
+                        </div>
+                      </div>
+
+                    <article class="post-card" data-category="tech" onclick="openPost('react-hooks')">
+                        <div class="post-image" id="tech1">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-category">Web Dev</span>
+                                <span class="post-date">Dec 12, 2024</span>
+                            </div>
+                            <h3 class="post-title">Advanced Fingerprinting with Python</h3>
+                            <p class="post-excerpt">Explore how Python tracks requests using smart fingerprinting a peek into practical backend logic.</p>
+                        </div>
+                    </article>
+
+                    <article class="post-card" data-category="travel" onclick="openPost('design-systems')">
+                        <div class="post-image" id="travel1">
+                         
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-category">Lakes</span>
+                                <span class="post-date">Jan 10, 2025</span>
+                            </div>
+                            <h3 class="post-title"> Reflections of Nature</h3>
+                            <p class="post-excerpt">Snow-capped peaks, mirrored skies, and forest-lined waters — a moment of pure serenity in the wild.</p>
+                        </div>
+                    </article>
+
+                    <article class="post-card" data-category="food" onclick="openPost('ai-future')">
+                        <div class="post-image" id="food2">
+          
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-category">Junk Food</span>
+                                <span class="post-date">Dec 14, 2024</span>
+                            </div>
+                            <h3 class="post-title">Sweet Heat Pizza</h3>
+                            <p class="post-excerpt">Barbecue chicken, pineapple, and red onion — a bold blend of smoky, sweet, and tangy flavors.</p>
+                        </div>
+                    </article>
+
+                   <article class="post-card" data-category="tech" onclick="openPost('react-hooks')">
+                        <div class="post-image" id="tech2">
+
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-category">AI</span>
+                                <span class="post-date">Dec 29, 2024</span>
+                            </div>
+                            <h3 class="post-title">Gaming Beyond the Screen</h3>
+                            <p class="post-excerpt">Step into virtual worlds where fun meets futuristic — VR is changing how we play, explore, and connect.</p>
+                        </div>
+                    </article>
+
+                       <article class="post-card" data-category="travel" onclick="openPost('design-systems')">
+                        <div class="post-image" id="travel2">
+                
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-category">Mountains</span>
+                                <span class="post-date">July 10, 2025</span>
+                            </div>
+                            <h3 class="post-title"> Where Mountains Meet the Stream</h3>
+                            <p class="post-excerpt">Crystal waters, towering pines, and rugged peaks — nature’s quiet symphony in full flow.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+        
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 TechVibe. Crafted with ❤️ for developers and tech enthusiasts.</p>
+        </div>
+    </footer>
+  <script src="blog.js"></script>
+</body>
+</html>
